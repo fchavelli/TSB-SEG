@@ -29,9 +29,7 @@ This repository is frozen on the paper: it changes only through errata (tagged
 
 ## Reproduce the figures and tables of the paper
 
-The results of every run of the paper (555,768 series runs of 10,259
-configurations) are published as Parquet tables. No experiment needs to be
-rerun to rebuild the paper.
+The results of every run of the paper are published as Parquet tables. No experiment needs to be rerun to rebuild the paper.
 
 ```bash
 conda env create -f environment.yml && conda activate tsbseg
