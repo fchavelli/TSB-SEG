@@ -1,0 +1,4 @@
+_target_: tsseg.metrics.state_detection.NormalizedMutualInformation
+task: state
+
+compute_params: {}

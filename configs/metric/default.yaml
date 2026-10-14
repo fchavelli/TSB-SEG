@@ -1,0 +1,15 @@
+# This file defines which metrics are loaded by default.
+# It acts as a "package" of metrics.
+# Each item in the defaults list refers to a file in this directory.
+# Hydra will compose them into the `metric` config group.
+defaults:
+
+  - /metric/f1_score@f1_score
+  - /metric/gaussian_f1@gaussian_f1
+  - /metric/covering@covering
+  - /metric/adjusted_rand_index@adjusted_rand_index
+  - /metric/weighted_adjusted_rand_index@weighted_adjusted_rand_index
+  - /metric/state_matching_score@state_matching_score
+  - /metric/adjusted_mutual_info@adjusted_mutual_info
+  - /metric/normalized_mutual_info@normalized_mutual_info
+  - /metric/bidirectional_covering@bidirectional_covering

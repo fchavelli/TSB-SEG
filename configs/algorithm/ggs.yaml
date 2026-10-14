@@ -1,0 +1,15 @@
+name: ggs
+task: change_point
+
+instance:
+  _target_: tsseg.algorithms.ggs.detector.GreedyGaussianDetector
+
+  k_max: 10  # set from the labels in Guided mode
+  lamb: 1.0
+  max_shuffles: 250
+  verbose: false
+  random_state: 0
+
+tunable_parameters:
+  - k_max: [5, 10, 20]
+  - lamb: [0.1, 1.0, 10.0]

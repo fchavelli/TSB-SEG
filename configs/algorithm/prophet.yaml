@@ -1,0 +1,26 @@
+name: prophet
+task: change_point
+
+# Change points: the strongest fitted rate changes of Prophet's trend. Defaults
+# and grid calibrated on 24 pilot series (BiC + F1).
+instance:
+  _target_: tsseg.algorithms.prophet.detector.ProphetDetector
+
+  n_changepoints: null          # guided: K from the labels
+  n_changepoint_func: null
+  n_candidates: 200
+  changepoint_prior_scale: 500.0
+  delta_threshold: 3.0          # non-guided only: |delta| over its median
+  seasonality: false
+  multivariate_strategy: "l2"
+  tolerance: 0.02
+  max_points: 2000
+
+# Guided: n_changepoints (from the labels) replaces the threshold, which is
+# not swept there (4 configurations; 16 non-guided).
+unsupervised_only_parameters: ["delta_threshold"]
+
+tunable_parameters:
+  - changepoint_prior_scale: [50.0, 500.0]
+  - multivariate_strategy: ["l2", "ensembling"]
+  - delta_threshold: [1.5, 2.5, 3.0, 4.0]

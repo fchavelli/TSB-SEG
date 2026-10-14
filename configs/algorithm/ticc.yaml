@@ -1,0 +1,18 @@
+name: ticc
+task: state
+
+instance:
+  _target_: tsseg.algorithms.ticc.detector.TiccDetector
+  
+  window_size: 3
+  n_states: 5  # set from the labels in Guided mode
+  lambda_parameter: 1e-3
+  beta: 3000
+  maxIters: 100
+  threshold: 1e-3
+  num_proc: 1
+
+tunable_parameters:
+  - window_size: [3, 5, 10]
+  - lambda_parameter: [1e-4, 1e-3, 1e-2]
+  - beta: [100, 1000, 5000]

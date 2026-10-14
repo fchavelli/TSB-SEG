@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: "If you use TSB-SEG, please cite the paper below."
+title: "TSB-SEG: A Systematic Time-Series Segmentation Benchmark"
+type: software
+license: AGPL-3.0-only
+repository-code: "https://github.com/fchavelli/TSB-SEG"
+authors:
+  - family-names: Chavelli
+    given-names: Félix
+    affiliation: "Inria, ENS, CNRS, PSL"
+  - family-names: Ermshaus
+    given-names: Arik
+    affiliation: "Humboldt-Universität zu Berlin"
+  - family-names: Yang
+    given-names: Fan
+    affiliation: "The Ohio State University"
+  - family-names: Schäfer
+    given-names: Patrick
+    affiliation: "Humboldt-Universität zu Berlin"
+  - family-names: Paparrizos
+    given-names: John
+    affiliation: "The Ohio State University and AUTh"
+  - family-names: Boniol
+    given-names: Paul
+    affiliation: "Inria, ENS, CNRS, PSL"
+preferred-citation:
+  type: conference-paper
+  title: "TSB-SEG: A Systematic Time-Series Segmentation Benchmark"
+  collection-title: "Advances in Neural Information Processing Systems (NeurIPS), Evaluations and Datasets Track"
+  year: 2026
+  authors:
+    - family-names: Chavelli
+      given-names: Félix
+    - family-names: Ermshaus
+      given-names: Arik
+    - family-names: Yang
+      given-names: Fan
+    - family-names: Schäfer
+      given-names: Patrick
+    - family-names: Paparrizos
+      given-names: John
+    - family-names: Boniol
+      given-names: Paul

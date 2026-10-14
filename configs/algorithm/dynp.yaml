@@ -1,0 +1,17 @@
+name: dynp
+task: change_point
+
+instance:
+  _target_: tsseg.algorithms.dynp.detector.DynpDetector
+
+  n_cps: null  # required: set from the labels (Guided only)
+  model: "l2"
+  min_size: 2
+  jump: 5
+  cost_params: null
+
+# Guided only (DynP needs n_cps). min_size is fixed: 2, 5 and 10 give the same
+# results (with jump=5 any min_size <= 5 is the same grid); see
+# configs/algorithm/pelt.yaml for jump.
+tunable_parameters:
+  - model: ["l1", "l2", "rbf", "cosine"]

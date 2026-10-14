@@ -1,0 +1,40 @@
+name: window
+task: change_point
+
+instance:
+  _target_: tsseg.algorithms.window.detector.WindowDetector
+
+  width: 100      # ruptures' default
+  n_cps: null
+  pen: 0.25         # coefficient: pen_scale="bic" below; ignored once n_cps is set
+  pen_scale: "bic"  # pen * log(n) * u, u = cost of one sample of the whole signal
+  epsilon: null
+  model: "l2"     # ruptures' default
+  min_size: 2     # ruptures' default
+  jump: 5         # ruptures' default
+  cost_params: null
+
+# Guided: n_cps (from the labels) overrides the penalty, which is therefore
+# not swept there.
+unsupervised_only_parameters: ["pen"]
+
+tunable_parameters:
+  - model: ["l1", "l2", "rbf", "cosine"]
+  - width: [50, 100, 200]
+  - pen: [0.0625, 0.25, 1.0, 4.0]
+
+# ---------------------------------------------------------------------------
+# Penalty calibration: see configs/algorithm/pelt.yaml for
+# pen_scale="bic" and the pilot (27 series, bidirectional covering and F1).
+# ---------------------------------------------------------------------------
+# Window takes its change points among the peaks of its score only, so its
+# penalty sits far below PELT's: X in {1/64 ... 32}, the optimum is X = 1/2 to
+# 2 on the covering but 1/32 to 1/8 on the F1; (covering + F1) / 2 is flat from
+# 1/16 to 1 (0.35 to 0.36) and best at X = 1/4, the default. X = 2 predicts
+# the true number of change points (median), X = 1/4 twice as many.
+# Best set of 4 values, each dataset taking its best: (1/32, 1/8, 1, 4) at
+# 0.4278 on (covering + F1) / 2, (1/16, 1/4, 1, 4) at 0.4277 -- kept, a
+# regular grid (ratio 4), within 0.001 of the best on the covering and 0.004
+# on the F1.
+# width 200 is the best of the three for every cost in the pilot; the three
+# are kept.

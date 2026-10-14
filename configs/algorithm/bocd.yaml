@@ -1,0 +1,21 @@
+name: bocd
+task: change_point
+
+instance:
+  _target_: tsseg.algorithms.bocd.detector.BOCDDetector
+
+  hazard_lambda: 300
+  mu: 0.0
+  kappa: 1.0
+  alpha: 1.0
+  beta: 1.0
+  truncate: -40
+  cp_prob_threshold: 0.05
+  min_distance: 25
+  max_cps: null
+  axis: 0
+
+tunable_parameters:
+  - hazard_lambda: [100, 300, 1000]
+  - cp_prob_threshold: [0.01, 0.05, 0.2]
+  - min_distance: [10, 25, 50]

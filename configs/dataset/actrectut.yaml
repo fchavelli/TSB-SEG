@@ -1,0 +1,8 @@
+name: actrectut
+modality: multivariate
+periodic: False
+
+loader:
+  _target_: tsbseg.data_loading.loaders.load_dataset
+  dataset_name: actrectut
+  return_X_y: True

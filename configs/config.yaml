@@ -1,0 +1,22 @@
+# @package _global_
+
+defaults:
+  - _self_
+  - pipeline: default
+  - experiment: unsupervised
+  - algorithm: time2state
+  - dataset: mocap
+  - metric: default
+  - preprocessing: default
+  - override hydra/sweeper: basic
+  - override hydra/launcher: basic  # hydra/launcher=slurm on a SLURM cluster
+
+# MLflow logs to MLFLOW_TRACKING_URI (e.g. sqlite:///$PWD/mlruns.db), or to
+# MLflow's default store when it is not set.
+
+hydra:
+  run:
+    dir: outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  sweep:
+    dir: multirun/${now:%Y-%m-%d}/${now:%H-%M-%S}
+    subdir: ${hydra.job.num}

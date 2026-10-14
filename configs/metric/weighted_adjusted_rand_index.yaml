@@ -1,0 +1,9 @@
+_target_: tsseg.metrics.state_detection.WeightedAdjustedRandIndex
+task: state
+
+compute_params: 
+  # Example: average_method: 'mean'
+  # This is optional and can be used to specify how to compute the metric.
+  # If not specified, the default method will be used.
+  distance_func: 'linear'
+  alpha: 0.1

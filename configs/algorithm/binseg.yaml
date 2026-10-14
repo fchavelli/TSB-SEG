@@ -1,0 +1,25 @@
+name: binseg
+task: change_point
+
+instance:
+  _target_: tsseg.algorithms.binseg.detector.BinSegDetector
+
+  n_cps: null
+  model: "l2"
+  min_size: 2
+  jump: 5
+  penalty: 8.0        # coefficient: pen_scale="bic" below; ignored once n_cps is set
+  pen_scale: "bic"    # penalty * log(n) * u, u = cost of one sample of the whole signal
+  epsilon: null
+  custom_cost: null
+  cost_params: null
+
+# Guided: n_cps (from the labels) overrides the penalty, which is therefore
+# not swept there.
+unsupervised_only_parameters: ["penalty"]
+
+tunable_parameters:
+  - model: ["l1", "l2", "rbf", "cosine"]
+  - penalty: [1.0, 2.0, 8.0, 32.0]
+
+# Calibration of the penalty, jump and min_size: see configs/algorithm/pelt.yaml.

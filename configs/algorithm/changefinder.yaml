@@ -1,0 +1,45 @@
+name: changefinder
+task: change_point
+
+instance:
+  _target_: tsseg.algorithms.changefinder.detector.ChangeFinderDetector
+
+  order: 5
+  discount: 0.005
+  smooth_window: 7
+  score: "logarithmic"
+  n_cps: null
+  threshold: null
+  # Selection without K: the Non-Guided default is the middle of the grid
+  # below (threshold mean + 4 std, change points at least 1 % of n apart),
+  # calibrated on pilot series.
+  threshold_factor: 4.0
+  min_distance: 10
+  min_distance_fraction: 0.01
+  multivariate_strategy: "l2"
+  tolerance: 0
+  # Ensembling without K: merge the detections of the channels (no vote); a
+  # majority vote loses changes.
+  consensus: 0.0
+  axis: 0
+
+# Guided runs use the selection below (threshold mean + 2 std, 10 samples):
+# with n_cps the threshold still filters the peaks among which the n_cps
+# strongest are kept. Applied by tsbseg.main before the configuration is
+# logged.
+guided_instance:
+  threshold_factor: 2.0
+  min_distance_fraction: 0.0
+
+# Guided: n_cps replaces the threshold factor (not swept there).
+unsupervised_only_parameters: ["threshold_factor"]
+# Non-guided: the AR order is fixed at 5 (flat on the calibration pilot), to
+# make room for the threshold axis without a larger grid.
+guided_only_parameters: ["order"]
+
+tunable_parameters:
+  - order: [3, 5, 10]
+  - discount: [0.005, 0.01, 0.05]
+  - smooth_window: [5, 7, 15]
+  - multivariate_strategy: ["l2", "ensembling"]
+  - threshold_factor: [3.0, 4.0, 5.0]

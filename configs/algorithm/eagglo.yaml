@@ -1,0 +1,13 @@
+name: eagglo
+task: change_point
+
+instance:
+  _target_: tsseg.algorithms.eagglo.detector.EAggloDetector
+
+  member: null
+  alpha: 1.0
+  penalty: null
+
+tunable_parameters:
+  - alpha: [0.5, 1.0, 2.0]
+  - penalty: [null, "len_penalty"]

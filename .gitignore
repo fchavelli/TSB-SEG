@@ -1,0 +1,24 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+
+# Build record of the release (local)
+.tsbseg-build.json
+
+# Downloaded or rebuilt: not versioned
+data/*/
+data/*.parquet
+results/results.db*
+
+# Outputs
+figures/
+benchmark/analysis/cache/
+outputs/
+multirun/
+mlruns/
+mlruns.db
+*.pkl

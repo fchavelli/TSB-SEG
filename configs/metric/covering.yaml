@@ -1,0 +1,5 @@
+_target_: tsseg.metrics.change_point_detection.Covering
+task: change_point
+
+compute_params:
+  convert_labels_to_segments: true

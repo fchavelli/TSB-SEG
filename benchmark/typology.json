@@ -1,0 +1,53 @@
+{
+  "categories": {
+    "CPD / Subsequence-based": {
+      "task": "CPD",
+      "algorithms": ["clasp", "espresso", "fluss", "igts", "tglad", "tire", "tscp2"]
+    },
+    "CPD / Distribution-based": {
+      "task": "CPD",
+      "algorithms": ["amoc", "binseg", "bocd", "bottomup", "changefinder", "dynp", "eagglo", "ggs", "icid", "pelt", "prophet", "window"]
+    },
+    "SD / Integrated": {
+      "task": "SD",
+      "algorithms": ["autoplait", "hdp-hsmm", "hidalgo"]
+    },
+    "SD / Decomposed": {
+      "task": "SD",
+      "algorithms": ["clap", "e2usd", "ticc", "time2state"]
+    }
+  },
+  "algorithms": {
+    "amoc":         {"display": "AMOC",         "task": "CPD", "subtype": "Distribution-based"},
+    "binseg":       {"display": "BinSeg",       "task": "CPD", "subtype": "Distribution-based"},
+    "bocd":         {"display": "BOCD",         "task": "CPD", "subtype": "Distribution-based"},
+    "bottomup":     {"display": "BottomUp",     "task": "CPD", "subtype": "Distribution-based"},
+    "changefinder": {"display": "ChangeFinder", "task": "CPD", "subtype": "Distribution-based"},
+    "dynp":         {"display": "DynP",         "task": "CPD", "subtype": "Distribution-based"},
+    "eagglo":       {"display": "EAgglo",       "task": "CPD", "subtype": "Distribution-based"},
+    "icid":         {"display": "iCID",         "task": "CPD", "subtype": "Distribution-based"},
+    "pelt":         {"display": "PELT",         "task": "CPD", "subtype": "Distribution-based"},
+    "prophet":      {"display": "Prophet",      "task": "CPD", "subtype": "Distribution-based"},
+    "window":       {"display": "Window",       "task": "CPD", "subtype": "Distribution-based"},
+
+    "clasp":        {"display": "ClaSP",        "task": "CPD", "subtype": "Subsequence-based"},
+    "espresso":     {"display": "ESPRESSO",     "task": "CPD", "subtype": "Subsequence-based"},
+    "fluss":        {"display": "FLUSS",        "task": "CPD", "subtype": "Subsequence-based"},
+    "igts":         {"display": "IGTS",         "task": "CPD", "subtype": "Subsequence-based"},
+    "tglad":        {"display": "tGLAD",        "task": "CPD", "subtype": "Subsequence-based"},
+    "tire":         {"display": "TIRE",         "task": "CPD", "subtype": "Subsequence-based"},
+    "tscp2":        {"display": "TS-CP$^2$",    "task": "CPD", "subtype": "Subsequence-based"},
+
+    "autoplait":    {"display": "AutoPlait",    "task": "SD",  "subtype": "Integrated"},
+    "ggs":          {"display": "GGS",          "task": "CPD", "subtype": "Distribution-based"},
+    "hdp-hsmm":     {"display": "HDP-HSMM",     "task": "SD",  "subtype": "Integrated"},
+    "hidalgo":      {"display": "Hidalgo",      "task": "SD",  "subtype": "Integrated"},
+
+    "clap":         {"display": "CLaP",         "task": "SD",  "subtype": "Decomposed"},
+    "e2usd":        {"display": "E2USD",        "task": "SD",  "subtype": "Decomposed"},
+    "ticc":         {"display": "TICC",         "task": "SD",  "subtype": "Decomposed"},
+    "time2state":   {"display": "Time2State",   "task": "SD",  "subtype": "Decomposed"},
+
+    "random":       {"display": "Random",       "task": "Baseline", "subtype": "Baseline"}
+  }
+}

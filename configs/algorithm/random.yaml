@@ -1,0 +1,9 @@
+name: random
+task: state
+
+instance:
+  _target_: tsseg.algorithms.random.detector.RandomDetector
+
+  n_change_points: null     # set from the labels in Guided mode
+  n_states: null            # set from the labels in Guided mode
+  random_state: 0

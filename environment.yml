@@ -1,0 +1,28 @@
+# Environment of the benchmark runs (versions of the cluster environment that
+# ran the experiments). For the figures only, requirements-analysis.txt suffices.
+#   conda env create -f environment.yml && conda activate tsbseg && pip install -e .
+name: tsbseg
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - numba=0.61.2
+  - statsmodels=0.14.5
+  - scikit-learn=1.6.1
+  - aeon=1.2.0
+  - pip:
+      - numpy==1.26.4
+      - pandas==2.1.4
+      - scipy==1.11.4
+      - pyarrow==22.0.0
+      - mlflow==3.8.1
+      - hydra-core==1.3.0
+      - hydra-submitit-launcher==1.2.0
+      - submitit==1.5.3
+      - torch==2.5.1
+      - tensorflow==2.18.1
+      - keras-tcn==3.5.6
+      - prophet==1.1.7
+      - stumpy==1.13.0
+      - ruptures==1.1.10

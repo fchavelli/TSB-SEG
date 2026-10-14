@@ -1,0 +1,50 @@
+# ──────────────────────────────────────────────────────────────────────
+# MLflow Benchmark Configuration
+# ──────────────────────────────────────────────────────────────────────
+# Experiments read by the analysis, their groups and the expected number of
+# series per dataset. Used by mlflow_manager.py and benchmark_analysis.py.
+
+# ── Experiment name mapping ──────────────────────────────────────────
+# Logical key → actual MLflow experiment name.
+# Wildcards (*) are supported and matched against the DB.
+experiments:
+  non_guided:        "non-guided-full-time-3"
+  guided:            "guided-full-time-3"
+  grid_non_guided:   "grid-non-guided-v3"
+  grid_guided:       "grid-guided-v3"
+
+# ── Groups ───────────────────────────────────────────────────────────
+# Each group maps to one or more logical keys above.
+# Used for mode assignment and analysis filtering.
+# Group name → becomes the "mode" column value in DataFrames.
+groups:
+  non-guided:
+    - non_guided
+  guided:
+    - guided
+  grid_non-guided:
+    - grid_non_guided
+  grid_guided:
+    - grid_guided
+
+# ── Expected series counts per dataset ───────────────────────────────
+# Used by BenchmarkAnalyzer.validate_completeness() to decide
+# whether a parent run is "complete".
+expected_series:
+  actrectut: 2
+  has: 250
+  mocap: 9
+  pamap2: 9
+  skab: 34
+  tssb: 75
+  usc-had: 70
+  utsa: 32
+  pump: 120
+
+# ── Partial methods ──────────────────────────────────────────────────
+# Kept even when they do not complete a dataset, flagged with
+# is_partial=True.
+partial_algos:
+  - espresso
+  - prophet
+  - ticc
