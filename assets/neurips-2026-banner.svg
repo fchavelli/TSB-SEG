@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="150" viewBox="0 0 920 150" role="img" aria-labelledby="title desc">
+  <title id="title">TSB-SEG at NeurIPS 2026</title>
+  <desc id="desc">TSB-SEG: A Systematic Time-Series Segmentation Benchmark. NeurIPS 2026, Evaluations and Datasets Track. 26 algorithms, 592 time series, 8 datasets, change point and state detection.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f1f7fe"/>
+      <stop offset="0.5" stop-color="#f4faf3"/>
+      <stop offset="1" stop-color="#fef5ee"/>
+    </linearGradient>
+    <clipPath id="card">
+      <rect x="0.5" y="0.5" width="919" height="149" rx="16"/>
+    </clipPath>
+    <clipPath id="seg1"><rect x="34" y="0" width="48" height="150"/></clipPath>
+    <clipPath id="seg2"><rect x="82" y="0" width="64" height="150"/></clipPath>
+    <clipPath id="seg3"><rect x="146" y="0" width="48" height="150"/></clipPath>
+    <path id="area" d="M34 91 L41 91 C49 91 55 65.7 63 65.7 C71 65.7 74 80 78 86.4 C82 93 86 101.4 91.6 101.4 C98 101.4 103 72 110 70.3 C113 69.6 116 70 118 66 C121 59 123 49 127.3 49 C132 49 136 75 142 86.4 C147 95 152 96.8 159.6 96.8 C168 96.8 171 66.8 179 66.8 L194 66.8 L194 115 L34 115 Z"/>
+  </defs>
+
+  <g clip-path="url(#card)">
+    <rect width="920" height="150" fill="url(#bg)"/>
+    <rect x="0" y="142" width="307" height="8" fill="#a7d2fc"/>
+    <rect x="307" y="142" width="306" height="8" fill="#c3ecbf"/>
+    <rect x="613" y="142" width="307" height="8" fill="#ffb475"/>
+  </g>
+  <rect x="0.5" y="0.5" width="919" height="149" rx="16" fill="none" stroke="#d0d7de"/>
+
+  <!-- segmented series, bars and gauge, after the TSB-SEG logo -->
+  <use href="#area" fill="#a7d2fc" clip-path="url(#seg1)"/>
+  <use href="#area" fill="#c3ecbf" clip-path="url(#seg2)"/>
+  <use href="#area" fill="#ffb475" clip-path="url(#seg3)"/>
+  <path d="M34 91 L41 91 C49 91 55 65.7 63 65.7 C71 65.7 74 80 78 86.4 C82 93 86 101.4 91.6 101.4 C98 101.4 103 72 110 70.3 C113 69.6 116 70 118 66 C121 59 123 49 127.3 49 C132 49 136 75 142 86.4 C147 95 152 96.8 159.6 96.8 C168 96.8 171 66.8 179 66.8 L194 66.8" fill="none" stroke="#2d3743" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="82" y1="30" x2="82" y2="125" stroke="#2d3743" stroke-width="4.5" stroke-linecap="round"/>
+  <line x1="146" y1="30" x2="146" y2="110" stroke="#2d3743" stroke-width="4.5" stroke-linecap="round"/>
+  <g fill="#2d3743" stroke="#ffffff" stroke-width="2.5" paint-order="stroke">
+    <rect x="98" y="98" width="9" height="20" rx="1.5"/>
+    <rect x="111" y="88" width="9" height="30" rx="1.5"/>
+    <rect x="124" y="76" width="9" height="42" rx="1.5"/>
+  </g>
+  <g stroke-linecap="round" fill="none">
+    <path d="M136 118 A18 18 0 0 1 172 118 Z" fill="#ffffff" stroke="#ffffff" stroke-width="10" stroke-linejoin="round"/>
+    <path d="M136 118 A18 18 0 0 1 172 118" stroke="#2d3743" stroke-width="4.5"/>
+    <line x1="154" y1="118" x2="164" y2="107" stroke="#2d3743" stroke-width="3"/>
+  </g>
+  <circle cx="154" cy="118" r="3.5" fill="#2d3743"/>
+
+  <g font-family="Helvetica, Arial, 'Liberation Sans', sans-serif">
+    <text x="222" y="42" font-size="13" font-weight="700" letter-spacing="1.6" fill="#0969da">NEURIPS 2026 · EVALUATIONS &amp; DATASETS TRACK</text>
+    <text x="222" y="77" font-size="21.5" font-weight="700" fill="#1f2328">TSB-SEG: A Systematic Time-Series Segmentation Benchmark</text>
+    <text x="222" y="104" font-size="14.5" fill="#424a53">Félix Chavelli, Arik Ermshaus, Fan Yang, Patrick Schäfer, John Paparrizos, Paul Boniol</text>
+    <text x="222" y="127" font-size="13" fill="#59636e">26 algorithms · 592 time series · 8 datasets · change point and state detection</text>
+  </g>
+</svg>
