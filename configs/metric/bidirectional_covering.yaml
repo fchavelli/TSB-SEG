@@ -1,0 +1,7 @@
+_target_: tsseg.metrics.bidirectional_covering.BidirectionalCovering
+
+task: change_point
+
+compute_params:
+  convert_labels_to_segments: true
+  aggregation: "harmonic"

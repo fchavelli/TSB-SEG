@@ -1,0 +1,41 @@
+name: tire
+task: change_point
+
+instance:
+  _target_: tsseg.algorithms.tire.detector.TireDetector
+
+  window_size: 20
+  stride: 1
+  domain: "both"
+  intermediate_dim_td: 0
+  latent_dim_td: 1
+  nr_shared_td: 1
+  nr_ae_td: 3
+  loss_weight_td: 1.0
+  intermediate_dim_fd: 10
+  latent_dim_fd: 1
+  nr_shared_fd: 1
+  nr_ae_fd: 3
+  loss_weight_fd: 1.0
+  nfft: 30
+  norm_mode: "timeseries"
+  # Minimum distance between change points, as a fraction of the series
+  # length (0.0: one sample). prominence_threshold calibrated on pilot series.
+  peak_distance_fraction: 0.0
+  prominence_threshold: 0.5   # non-guided only
+  max_epochs: 20
+  patience: 5
+  learning_rate: 0.001
+  n_segments: null
+  axis: 0
+  random_state: 0
+
+# Guided: n_segments (from the labels) replaces the threshold, which is not
+# swept there.
+unsupervised_only_parameters: ["prominence_threshold"]
+
+tunable_parameters:
+  - window_size: [10, 20, 50]
+  - domain: ["both", "TD", "FD"]
+  - max_epochs: [20, 50, 100]
+  - prominence_threshold: [0.05, 0.2, 0.5, 0.7]

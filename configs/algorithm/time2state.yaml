@@ -1,0 +1,28 @@
+name: time2state
+task: state
+
+instance:
+  _target_: tsseg.algorithms.time2state.detector.Time2StateDetector
+
+  window_size: 256
+  step: 50
+  n_states: 20  # set from the labels in Guided mode
+  alpha: 1000.0
+  batch_size: 1
+  nb_steps: 20
+  lr: 0.003
+  depth: 10
+  out_channels: 4
+  reduced_size: 80
+  kernel_size: 3
+  use_gpu: null
+  random_state: 0
+
+tunable_parameters:
+  - window_size: [64, 128, 256]
+  - step: [20, 50, 100]
+  - depth: [1, 5, 10]
+
+tuning_metric:
+  name: "adjusted_rand_index"
+  mode: "max"

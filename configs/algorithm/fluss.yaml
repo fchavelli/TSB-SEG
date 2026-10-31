@@ -1,0 +1,25 @@
+name: fluss
+task: change_point
+
+instance:
+  _target_: tsseg.algorithms.fluss.detector.FLUSSDetector
+
+  window_size: 10
+  # Without K: the change points are the minima of the corrected arc curve
+  # below `threshold`; in Guided mode the labels set n_segments.
+  n_segments: null
+  exclusion_factor: 5
+  multivariate_strategy: "ensembling"
+  tolerance: 0.01
+  threshold: 0.65   # non-guided only: the middle of the grid below
+  consensus: 0.0   # non-guided ensembling: merge the channels, no vote
+  # threshold calibrated on pilot series.
+
+# Guided: n_segments (from the labels) replaces the threshold.
+unsupervised_only_parameters: ["threshold"]
+
+tunable_parameters:
+  - window_size: [10, 25, 50]
+  - exclusion_factor: [3, 5, 10]
+  - multivariate_strategy: ["ensembling", "l2"]
+  - threshold: [0.5, 0.65, 0.8]

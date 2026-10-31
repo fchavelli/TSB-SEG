@@ -1,0 +1,15 @@
+_target_: tsseg.metrics.state_detection.StateMatchingScore
+task: state
+
+compute_params:
+
+  # Parameters for computing the state matching score.
+  weights:
+    delay: 0.1
+    transition: 0.3
+    isolation: 0.8
+    missing: 0.5
+
+  # Optional artifacts to return.
+  return_mapped: true
+  return_errors: true

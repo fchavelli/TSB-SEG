@@ -1,0 +1,33 @@
+# SLURM launcher (Hydra submitit): one job per series run.
+#
+#   python src/tsbseg/main.py hydra/launcher=slurm ...
+#
+# Workers inherit MLFLOW_TRACKING_URI from the submitting environment, so
+# that they log to the same store as the controller.
+
+# @package hydra.launcher
+_target_: hydra_plugins.hydra_submitit_launcher.submitit_launcher.SlurmLauncher
+
+# ── BaseQueueConf defaults ─────────────────────
+submitit_folder: ${hydra.sweep.dir}/.submitit/%j
+timeout_min: 1440
+cpus_per_task: 8
+gpus_per_node: 0
+tasks_per_node: 1
+mem_gb: 32
+nodes: 1
+name: ${hydra.job.name}
+stderr_to_stdout: false
+
+# ── Slurm-specific ─────────────────────────────
+# Partitions of the cluster that ran the benchmark: set those of yours.
+partition: cpu_homogen,cpu_devel
+signal_delay_s: 120
+max_num_timeout: 0
+additional_parameters: {}
+array_parallelism: 256
+
+setup:
+  - "export SLURM_CPU_BIND=none"
+  - "export OMP_NUM_THREADS=8"
+  - "export MKL_NUM_THREADS=8"

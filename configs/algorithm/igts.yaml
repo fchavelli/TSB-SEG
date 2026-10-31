@@ -1,0 +1,12 @@
+name: igts
+task: change_point
+
+instance:
+  _target_: tsseg.algorithms.igts.detector.InformationGainDetector
+
+  k_max: 10  # set from the labels in Guided mode
+  step: 5
+
+tunable_parameters:
+  - k_max: [5, 10, 25]
+  - step: [1, 5, 10]

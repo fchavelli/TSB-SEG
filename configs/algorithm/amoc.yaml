@@ -1,0 +1,10 @@
+name: amoc
+task: change_point
+
+instance:
+  _target_: tsseg.algorithms.amoc.detector.AmocDetector
+
+  min_size: 5
+
+tunable_parameters:
+  - min_size: [5, 15, 30]

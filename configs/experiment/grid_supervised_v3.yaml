@@ -1,0 +1,7 @@
+# @package _global_
+name: "grid-guided-v3"
+timeout_seconds: 86400     # 24 hours (aligned with SLURM timeout_min: 1440)
+supervision_mode: "semi_supervised"
+pipeline:
+  name: grid_v2
+proportional_timeout: false

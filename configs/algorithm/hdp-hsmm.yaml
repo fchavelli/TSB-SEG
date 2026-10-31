@@ -1,0 +1,38 @@
+name: hdp-hsmm
+task: state
+
+# Defaults shared by all series, not fitted per series; their measured
+# sensitivity is documented in the detector docstring. dur_beta: null sets the
+# prior mean duration to T/3, the most influential setting.
+instance:
+  _target_: tsseg.algorithms.hdp_hsmm.detector.HdpHsmmDetector
+
+  axis: 0
+  alpha: 6.0
+  gamma: 6.0
+  init_state_concentration: 6.0
+  n_iter: 20
+  n_max_states: 20
+  trunc: null
+  kappa0: 0.25
+  nu0: null
+  prior_mean: 0.0
+  prior_scale: 1.0
+  emission_strength: 100.0
+  dur_family: poisson
+  # The detector's default, 5.0, is not a grid point, and the benchmark reads each
+  # default from its grid cell (benchmark/analysis/data.py, DEFAULT_FROM_GRID). 10.0 is
+  # the grid value nearest to 5.0 on the scale of a Gamma shape: the prior's coefficient
+  # of variation 1/sqrt(dur_alpha) is 0.45 at 5.0, 0.32 at 10.0 and 0.71 at 2.0.
+  dur_alpha: 10.0
+  dur_beta: null
+  dur_r: 1.0
+  max_len: 2000
+  block_features: mean
+  normalize: true
+  init: states
+
+tunable_parameters:
+  - alpha: [1.0, 3.0, 6.0]
+  - dur_alpha: [2.0, 10.0, 20.0]
+  - n_max_states: [10, 20, 40]

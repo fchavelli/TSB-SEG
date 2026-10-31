@@ -1,0 +1,6 @@
+name: autoplait
+task: state
+
+instance:
+  _target_: tsseg.algorithms.autoplait.detector.AutoPlaitDetector
+  n_cps: null

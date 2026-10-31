@@ -1,0 +1,8 @@
+name: utsa
+modality: univariate
+periodic: False
+
+loader:
+  _target_: tsbseg.data_loading.loaders.load_dataset
+  dataset_name: utsa
+  return_X_y: True

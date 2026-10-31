@@ -1,0 +1,15 @@
+name: icid
+task: change_point
+
+instance:
+  _target_: tsseg.algorithms.icid.detector.ICIDDetector
+
+  window_size: 50
+  alpha: 0.5
+  t: 200
+  psi_list: null
+
+tunable_parameters:
+  - window_size: [30, 50, 100]
+  - alpha: [0.1, 0.5, 0.9]
+  - t: [100, 200, 300]

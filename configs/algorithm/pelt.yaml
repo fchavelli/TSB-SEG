@@ -1,0 +1,45 @@
+name: pelt
+task: change_point
+
+instance:
+  _target_: tsseg.algorithms.pelt.detector.PeltDetector
+
+  model: "l2"
+  min_size: 2
+  jump: 5
+  penalty: 8.0        # coefficient: pen_scale="bic" below
+  pen_scale: "bic"    # penalty * log(n) * u, u = cost of one sample of the whole signal
+  cost_params: null
+
+# PELT takes no number of change points: it only runs Non-Guided, and its
+# Guided results are its Non-Guided ones.
+tunable_parameters:
+  - model: ["l1", "l2", "rbf", "cosine"]
+  - penalty: [1.0, 2.0, 8.0, 32.0]
+
+# ---------------------------------------------------------------------------
+# Penalty calibration, shared by pelt, binseg and bottomup
+# ---------------------------------------------------------------------------
+# On z-normalised series the l2 cost of one sample is d (the l1 one about
+# 0.7 d) and the kernel ones are bounded by 1, so one absolute penalty means
+# very different things across datasets and costs.
+#
+# pen_scale="bic" makes the penalty a coefficient X on log(n) * u, u the cost
+# of one sample of the whole signal (tsseg ruptures.utils.bic_penalty): d log n
+# for l2, the BIC of one more segment with unit variance, and log n for the
+# kernel costs. One X then applies across lengths, dimensions and costs.
+#
+# X was chosen on 27 pilot series (3 per dataset), the
+# pipeline's preprocessing, jump=5, min_size=2, X in {1/4 ... 32}, on the
+# bidirectional covering and the F1 (series -> dataset mean -> mean):
+# * the optimum is X = 4 to 8 for every algorithm and cost; X = 8 is the
+#   single best, with 1.1 to 1.6 times the true number of change points
+#   (median over series), X = 16 about as many as the truth;
+# * best set of 4 values, each dataset taking its best (a tuned grid):
+#   (1, 2, 8, 32) on (covering + F1) / 2 and on F1, (1, 4, 8, 32) on the
+#   covering, within 0.003 of each other.
+#
+# jump and min_size are fixed to ruptures' defaults: min_size in {2, 5, 10}
+# does not change DynP's results (with jump=5 any min_size <= 5 is the same
+# grid), and jump=5 localises within the F1 margin (1 % of n) for
+# every series of 500 samples or more, at a fifth of jump=1's cost.

@@ -1,0 +1,2 @@
+# Default global preprocessing
+_target_: aeon.transformations.collection.Normalizer

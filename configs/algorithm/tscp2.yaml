@@ -1,0 +1,32 @@
+name: tscp2
+task: change_point
+
+instance:
+  _target_: tsseg.algorithms.tscp2.detector.TSCP2Detector
+
+  window_size: 128
+  n_cps: null  # set from the labels in Guided mode
+  similarity_threshold: null
+  stride: 5
+  code_size: 32
+  nb_filters: 64
+  kernel_size: 4
+  dilations: null
+  nb_stacks: 2
+  dropout_rate: 0.0
+  dense_units: null
+  batch_size: 64
+  epochs: 100
+  learning_rate: 1e-3
+  loss: "nce"
+  temperature: 0.1
+  tau: 0.1
+  beta: 0.1
+  similarity: "cosine"
+  refit_on_predict: False
+  axis: 0
+
+tunable_parameters:
+  - window_size: [64, 128, 256]
+  - loss: ["nce", "dcl", "fc"]
+  - epochs: [50, 100, 200]

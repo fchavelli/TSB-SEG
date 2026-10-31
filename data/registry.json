@@ -1,0 +1,143 @@
+{
+  "mocap": {
+    "kind": "hf",
+    "repo": "fchavelli/tsb-seg",
+    "revision": "94163e410dad41360193480c87f96281e4c9376d",
+    "files": {
+      "data/mocap.parquet": {
+        "dest": "data/mocap.parquet",
+        "sha256": "fbbc83a194e653571381adb2a34e6d3368108df6227dca1bec88273547758523",
+        "bytes": 2231504
+      }
+    },
+    "license": "CMU Graphics Lab Motion Capture Database terms: free for research and for use in commercial products; the data may not be resold, even converted. Please acknowledge the database (see the citation)."
+  },
+  "has": {
+    "kind": "hf",
+    "repo": "fchavelli/tsb-seg",
+    "revision": "94163e410dad41360193480c87f96281e4c9376d",
+    "files": {
+      "data/has.parquet": {
+        "dest": "data/has.parquet",
+        "sha256": "9878f33658bea7d65c0f1a7638ca0dd7560dfe898ebad14a848f62e56f2f0bce",
+        "bytes": 53292720
+      }
+    },
+    "license": "CC BY-NC-SA 4.0, as the source (non-commercial, share alike)."
+  },
+  "actrectut": {
+    "kind": "hf",
+    "repo": "fchavelli/tsb-seg",
+    "revision": "94163e410dad41360193480c87f96281e4c9376d",
+    "files": {
+      "data/actrectut.parquet": {
+        "dest": "data/actrectut.parquet",
+        "sha256": "966efb3e705afe06c9e5115f86c331c3918f7e62ba1033624a328d7e4ac43b65",
+        "bytes": 478165
+      }
+    },
+    "license": "GPL-3.0-or-later, as the source."
+  },
+  "pump": {
+    "kind": "hf",
+    "repo": "fchavelli/tsb-seg",
+    "revision": "94163e410dad41360193480c87f96281e4c9376d",
+    "files": {
+      "data/pump.parquet": {
+        "dest": "data/pump.parquet",
+        "sha256": "cd86eb53a3c26e03350afedb3966151553dbd8c75e93552fe71ecce0f3b8d8b5",
+        "bytes": 188893783
+      }
+    },
+    "license": "CC BY 4.0, as the source."
+  },
+  "skab": {
+    "kind": "hf",
+    "repo": "fchavelli/tsb-seg",
+    "revision": "94163e410dad41360193480c87f96281e4c9376d",
+    "files": {
+      "data/skab.parquet": {
+        "dest": "data/skab.parquet",
+        "sha256": "6100314b89401349fee6a2279dcbb4394040f77762aa7f554d52cfb7a1ef0b44",
+        "bytes": 1436041
+      }
+    },
+    "license": "GPL-3.0, as the source."
+  },
+  "tssb": {
+    "kind": "hf",
+    "repo": "fchavelli/tsb-seg",
+    "revision": "94163e410dad41360193480c87f96281e4c9376d",
+    "files": {
+      "data/tssb.parquet": {
+        "dest": "data/tssb.parquet",
+        "sha256": "bf4a8d2bd3da2b066aa3b04a43f317f8f680b6ca457bf24815e9d859007d07be",
+        "bytes": 3134773
+      }
+    },
+    "license": "BSD 3-Clause, as the source."
+  },
+  "pamap2": {
+    "kind": "hf",
+    "repo": "fchavelli/tsb-seg",
+    "revision": "94163e410dad41360193480c87f96281e4c9376d",
+    "files": {
+      "data/pamap2.parquet": {
+        "dest": "data/pamap2.parquet",
+        "sha256": "b0f5816f5590b80c4891e9fbe5f4fc056ddcdf02df72e72738dbbd43c9a3452c",
+        "bytes": 170638267
+      }
+    },
+    "license": "CC BY 4.0, as the source (UCI, DOI 10.24432/C5NW2H)."
+  },
+  "usc-had": {
+    "kind": "zip",
+    "url": "https://sipi.usc.edu/had/USC-HAD.zip",
+    "member_prefix": "USC-HAD/",
+    "target": "data/usc-had",
+    "license": "no explicit license; cite Zhang and Sawchuk (2012)",
+    "sha256": "7b9c1ff39aa5a7055656aa2dbdbb17283a9f1abcf467a8605ec5315b67111341"
+  },
+  "utsa": {
+    "kind": "files",
+    "base_url": "https://raw.githubusercontent.com/ermshaua/classification-label-profile/e69063d550ba77b0ce651941185c7d37865b4531/datasets/UTSA/",
+    "target": "data/utsa",
+    "license": "no explicit license at the source; redistributed by the ClaP repository (BSD 3-Clause)",
+    "files": {
+      "Cane.txt": "c1521fff240d36f694af05defbe0b2ed3ee29d43e9c8c3cbb0e7546d2b4e2288",
+      "DutchFactory.txt": "777f6757ad4c2c7aa7816ece18993d98bdb35e4d11f4c7d37c91715d3fca1b50",
+      "EEGRat.txt": "844759b1bafd588d1311b3f0388075af2f380ddd75f51aa0cfefc03296a6350e",
+      "EEGRat2.txt": "36acbdfb1098bba176d1461b7c05c9d416a97991cfdb8206a5514473d94963fe",
+      "Fetal2013.txt": "09507401534884dee4bf4be0c37c1aebf1427d9130240b04dfa9b154bc95c19e",
+      "GrandMalSeizures.txt": "f2019690f9a9045041c93348b203a7d378baf58e8adf902f16ada2951cdaf320",
+      "GrandMalSeizures2.txt": "1d46a62283d531c119d05a98ebd3644a195742175a8946a75e74b971bd98a654",
+      "GreatBarbet1.txt": "45ebf1540a0ebc4b88fae1f4252e93f3d758b211ae3a409c6c9219590bf0842f",
+      "GreatBarbet2.txt": "5fcf430a89120cb2ecce2958f418a882acf775a69e92911afdf75d0156c6224a",
+      "InsectEPG1.txt": "981216002afdbc405d606a0a5833fdda42ac3100c620956aa1b5ba3b4aaf5ea9",
+      "InsectEPG2.txt": "e38b9282b1738e10d588a31a642475bbe4a8831fadd1896f45b0a946424a533e",
+      "InsectEPG3.txt": "3eb641b66b803b05a503b7ca6634731824cc1df7dfa0dacc931820ef6176aa81",
+      "InsectEPG4.txt": "129a7796e3c1318cd1feb54b7d9516d4894803fb9fe8a2b076b3fe3e10d3a316",
+      "NogunGun.txt": "f4e950e9c16789a4ecede1f121adbce9018097d8b8560a0b45ade90a4333fccf",
+      "PigInternalBleedingDatasetAirwayPressure.txt": "cbac15e5e6d1660723764f31646e69b81ac734556226e749462d1e4fe01b5d7e",
+      "PigInternalBleedingDatasetArtPressureFluidFilled.txt": "5195e09f882d2dbaf1a74ad04eaacad4f7113504509a28c4f5b7bb5b2d8b844e",
+      "PigInternalBleedingDatasetCVP.txt": "f7a8a861b7f8c7e8eaa14e29ce7bcac3041c297affe80d000ac5d7a0a4183dff",
+      "Powerdemand.txt": "ba73b98393e1287a80468ed13b0ae4973d979468502308c455c5aa543d6df89c",
+      "PulsusParadoxusECG1.txt": "67e3e40f727fd76c7f46e174da8efd08cf4665ec3d5ae7b10c9a44956e227207",
+      "PulsusParadoxusECG2.txt": "ff9ac5e90434afe9ecd37baf6d364e7e7f5c2c798683dbe7bcff02d44cdddbf0",
+      "PulsusParadoxusSP02.txt": "beb4545c92fe7221e79637da6de4e2816195789a86490f151998a0815fa12a0b",
+      "RoboticDogActivityX.txt": "532383a7c92fec026679f3352cebea86e5e258c80d7e2b744026ff5701393df5",
+      "RoboticDogActivityY.txt": "1eb8e05ff53657e13a21407b0b6cb183c6ca59c912e7acf7b5f4868f180e1e79",
+      "RoboticDogActivityZ.txt": "6b17db8337d56aeb0c1f4508eb96a8b745553df855e4a0417ac79f3c275528cf",
+      "SimpleSynthetic.txt": "f635d92fb6f4c76a0ae3c043e8a0aa1145a7d2ab303bc5d301560665c958313f",
+      "SuddenCardiacDeath1.txt": "f71183ffaa794d5d7cef435656c65bc36f1bdda2ea83c2afe046c29a61b374e6",
+      "SuddenCardiacDeath2.txt": "b19c1c9c89ba275affb3573675b650e5fc01d81d8743f40f21307da294eb60e4",
+      "SuddenCardiacDeath3.txt": "15bee675715602a5a3beabdbc637b737ef040d082b44d8981a3a027e0b7aace6",
+      "TiltABP.txt": "84c98b5517184d447f67db5ce209cb5d6d2157b38cdd3b8d35d9541ef2bf99da",
+      "TiltECG.txt": "e2a5215439813ecc81cdba29c84b1a36178c34b763a6c48153dfc5164c47ccb0",
+      "WalkJogRun1.txt": "312dd013edb528cc88f2b95f4c8beb960ba32d7feddefeb7ea61fb59490df6c4",
+      "WalkJogRun2.txt": "8da1d27373ade30267e3c939a56d7fc82e12b0f0cf14450a192ba7d61bd4c4b8",
+      "desc.txt": "e4206f1393e5d5e29fadcd109ccf3c1a0dc18125f5139d6fd2daea92bf6ed073",
+      "properties.txt": "1b4dfd212537416ac3f5fddc397bf61779d76727cf8c079978d726d3d9cec491"
+    }
+  }
+}

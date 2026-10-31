@@ -1,0 +1,20 @@
+name: clap
+task: state
+
+instance:
+  _target_: tsseg.algorithms.clap.clap_detector.ClapDetector
+
+  n_segments: null
+  n_change_points: null  # set from the labels in Guided mode
+  window_size: "suss"
+  classifier: "rocket"
+  merge_score: "cgain"
+  n_splits: 5
+  n_jobs: 1
+  sample_size: 1000
+  random_state: 0
+  change_points: null
+
+tunable_parameters:
+  - window_size: ["suss", "fft", "acf"]
+  - classifier: ["rocket", "mrhydra"]

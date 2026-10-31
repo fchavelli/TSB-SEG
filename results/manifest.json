@@ -1,0 +1,71 @@
+{
+  "created": "2026-10-31T15:30:54+0100",
+  "source": {
+    "file": "mlflow.db",
+    "size_bytes": 13239070720,
+    "mtime": "2026-10-26T14:50:15+0100"
+  },
+  "source_commit": {
+    "commit": "39c111f9113eb3a96edfb2560f8eabe071b4ebb9",
+    "dirty": true
+  },
+  "experiments": {
+    "non_guided": {
+      "id": 6,
+      "name": "non-guided-full-time-3",
+      "runs": 5474
+    },
+    "guided": {
+      "id": 7,
+      "name": "guided-full-time-3",
+      "runs": 5832
+    },
+    "grid_non_guided": {
+      "id": 8,
+      "name": "grid-non-guided-v3",
+      "runs": 341607
+    },
+    "grid_guided": {
+      "id": 9,
+      "name": "grid-guided-v3",
+      "runs": 209756
+    }
+  },
+  "dropped_tags": [
+    "mlflow.user",
+    "mlflow.source.name",
+    "mlflow.source.type",
+    "mlflow.source.git.commit",
+    "mlflow.note.content"
+  ],
+  "tables": {
+    "runs": [
+      552605,
+      33
+    ],
+    "configs": [
+      10064,
+      31
+    ],
+    "config_params": [
+      261335,
+      3
+    ],
+    "run_params": [
+      3362545,
+      3
+    ],
+    "sms_error_breakdown": [
+      6508,
+      20
+    ]
+  },
+  "extra": [],
+  "sha256": {
+    "config_params.parquet": "c1a3801f8c8427a6eb66e4e4e8b206d2cff8f27a164df22659b641cfcafab13f",
+    "configs.parquet": "1da11553e976d12f990db41238058068eda7ca8df4f8f1da66e9f1b3b94700ce",
+    "run_params.parquet": "7839705086682b4982850b38dea374fd8eeeb3d58958a1ec119aee39eced210d",
+    "runs.parquet": "b413ac90cb3ca921685918fc2ee5caf31c90c156b8043bf9f0a9b47875ec057b",
+    "sms_error_breakdown.parquet": "1860b34ae473339da4046abccbe1a956896048fe9c6140fc9f9c0d5253f72a16"
+  }
+}

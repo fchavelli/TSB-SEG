@@ -1,0 +1,4 @@
+name: "guided-full-time-3"
+timeout_seconds: 86400     # 24 hours (aligned with SLURM timeout_min: 1440)
+supervision_mode: "semi_supervised"
+proportional_timeout: false

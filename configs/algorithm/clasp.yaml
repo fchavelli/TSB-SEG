@@ -1,0 +1,23 @@
+name: clasp
+task: change_point
+
+instance:
+  _target_: tsseg.algorithms.clap.clasp_detector.ClaspDetector
+
+  n_segments: "learn"
+  n_change_points: null  # set from the labels in Guided mode
+  n_estimators: 10
+  window_size: "suss"
+  k_neighbours: 3
+  excl_radius: 5
+  distance: "znormed_euclidean_distance"
+  score: "roc_auc"
+  early_stopping: true
+  validation: "significance_test"
+  threshold: "default"
+  n_jobs: 1
+
+tunable_parameters:
+  - distance: ["znormed_euclidean_distance", "cinvariant_euclidean_distance", "euclidean_distance"]
+  - k_neighbours: [3, 5, 10]
+  - window_size: ["suss", "fft"]

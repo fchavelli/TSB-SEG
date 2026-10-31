@@ -1,0 +1,6 @@
+_target_: tsseg.metrics.gaussian_f1.GaussianF1Score
+task: change_point
+
+compute_params:
+  sigma_fraction: 0.01
+  convert_labels_to_segments: true

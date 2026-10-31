@@ -1,0 +1,4 @@
+_target_: tsseg.metrics.state_detection.AdjustedMutualInformation
+task: state
+
+compute_params: {}
