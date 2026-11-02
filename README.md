@@ -73,7 +73,7 @@ that implements the methods of the benchmark behind one `fit`/`predict` API.
 - **26 algorithms** spanning five decades, organised by how they search the
   segmentation and what must stay the same within a segment. A **main pool**
   of 21 methods (15 CPD, 6 SD) runs on every series and gives the ranking; an
-  **extended-scope pool** gathers the 5 methods that cannot. 14 of them were
+  **extended-scope pool** gathers the 5 methods that cannot. 13 of them were
   absent from existing toolkits and were reimplemented or adapted in `tsseg`.
 - **Two evaluation axes.** Each method runs its **Default** configuration and
   a **parameter grid** (tuned and worst-case scores per dataset, and the
