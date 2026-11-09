@@ -22,3 +22,6 @@ multirun/
 mlruns/
 mlruns.db
 *.pkl
+
+# Local
+*.md
